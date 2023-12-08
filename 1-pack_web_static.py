@@ -8,6 +8,7 @@ from fabric.api import local, runs_once
 @runs_once
 def do_pack():
     """Archives the static files."""
+    # create this folder version if it doesn’t exist
     if not os.path.isdir("versions"):
         os.mkdir("versions")
     cur_time = datetime.now()
@@ -21,6 +22,7 @@ def do_pack():
     )
     try:
         print("Packing web_static to {}".format(output))
+    # Execute command locally to compress files
         local("tar -cvzf {} web_static".format(output))
         archize_size = os.stat(output).st_size
         print("web_static packed: {} -> {} Bytes".format(output, archize_size))
