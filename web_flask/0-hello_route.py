@@ -11,7 +11,7 @@ app = Flask(__name__)
 @app.route('/', strict_slashes=False)
 def home():
     """
-    returnig "Hello HBNB!" at 0.0.0.0:5000/
+    display "Hello HBNB!" at 0.0.0.0:5000/
     """
     return "Hello HBNB!"
 
