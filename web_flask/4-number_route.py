@@ -47,7 +47,7 @@ def python_text(text):
 @app.route('/number/<int:n>')
 def number(n):
     """Return: n is a number if n is int"""
-    return "%s is a number" % n
+    return f"{escape(n)} is a number"
 
 
 if __name__ == "__main__":
